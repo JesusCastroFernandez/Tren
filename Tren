@@ -1,0 +1,41 @@
+public class Tren {
+    private int numVagones;
+    private int capacidadVagon;
+    private int velocidadMaxima;
+    private String ruta;
+    private Conductor conductor;
+
+    public Tren(int numVagones, int capacidadVagon, int velocidadMaxima, String ruta) {
+        this.numVagones = numVagones;
+        this.capacidadVagon = capacidadVagon;
+        this.velocidadMaxima = velocidadMaxima;
+        this.ruta = ruta;
+    }
+
+    public void agregarVagon(Vagon vagon) throws CapacidadMaximaException {
+        if (numVagones + 1 > conductor.getCapacidadMaxima()) {
+            throw new CapacidadMaximaException();
+        }
+        numVagones++;
+        // agregar el vagon a la lista de vagones del tren
+    }
+
+    public void eliminarVagon(Vagon vagon) {
+        numVagones--;
+        // eliminar el vagon de la lista de vagones del tren
+    }
+
+    public void asignarConductor(Conductor conductor) {
+        this.conductor = conductor;
+    }
+
+    public void establecerVelocidad(int velocidad) {
+        if (velocidad <= velocidadMaxima) {
+            // establecer la velocidad del tren
+        }
+    }
+
+    public void cambiarRuta(String nuevaRuta) {
+        ruta = nuevaRuta;
+    }
+}
